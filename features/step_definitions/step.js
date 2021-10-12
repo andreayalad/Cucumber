@@ -1,18 +1,13 @@
-  const Person = require('../../src/shouty.js')
   const { Given, When, Then } = require('@cucumber/cucumber')
-  const { assertThat, is } = require('hamjest')
 
-  Given('Lucy is located {int} metres from Sean', function (distance) {
-    this.lucy = new Person
-    this.sean = new Person
-    this.lucy.moveTo(distance)
+  Given('{person} is located/standing {int} metre(s) from Sean', function (lucy, distance) {
+    console.log(`Lucy is ${distance * 100} centimeters from sean`)
   })
 
-  When('Sean shouts {string}', function (message) {
-      this.sean.shout(message)
-      this.message = message
+  When('Sean shouts "free bagels at Sean\'s"', function () {
+     //matched!
   })
 
   Then('Lucy hears Sean\'s message', function () {
-    assertThat(this.lucy.messagesHeard(), is([this.message]))
+    //matched!
   })
