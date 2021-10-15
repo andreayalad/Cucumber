@@ -44,5 +44,11 @@ Feature: Hear shout
         Scenario: Messsage is too long 
             Given a person named Sean
             And a person named Lucy
-            When Sean shouts "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            When Sean shouts the following message
+            """
+            Lorem ipsum dolor sit amet, consectetur 
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            """
             Then Lucy should not hear a shout 
